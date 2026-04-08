@@ -15,7 +15,7 @@
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="title">
-                <p>Te amo! ❤️</p>
+                <p>Te amo infinitamente! ❤️</p>
             </div>
             <div class="right-icon">
                 <i class="fa-solid fa-ellipsis"></i>
@@ -23,7 +23,7 @@
         </header>
         <section class="music-section">
 
-            <audio src="assets/music.mp3"></audio>
+            <audio src="assets/music.mp3" loop></audio>
 
             <div class="cover">
                 <img src="assets/capa.jpg" alt="Imagem da capa">
@@ -34,7 +34,7 @@
                         <h1>Until I Found You (Em Beihold Version)</h1>
                     </div>
                     <div class="artist">
-                        <h2>Stephen Sanchez e Em Beihold</h2>
+                        <p>Stephen Sanchez e Em Beihold</p>
                     </div>
                 </div>
                 <div class="saved-icon">
@@ -73,14 +73,91 @@
             </div>
         </section>
         <section class="counter-section">
-
+            <div class="counter-photo">
+                <h2>Sobre nós</h2>
+                <img src="assets/contador.jpg" alt="Foto do contador">
+            </div>
+            <div class="counter">
+                <h2>Gleidson e Maria</h2>
+                <p>Juntos desde 2023</p>
+                <div class="counter-grid">
+                    <div class="time-box">
+                        <span class="number" id="years">00</span>
+                        <span class="label">Anos</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="months">00</span>
+                        <span class="label">Meses</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="days">00</span>
+                        <span class="label">Dias</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="hours">00</span>
+                        <span class="label">Horas</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="minutes">00</span>
+                        <span class="label">Minutos</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="number" id="seconds">00</span>
+                        <span class="label">Segundos</span>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="text-section">
+            <h2>Mensagem especial</h2>
 
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed hic amet vero sunt dignissimos repudiandae corrupti mollitia consectetur? Suscipit soluta neque excepturi, impedit voluptatibus accusamus numquam eveniet labore a ipsa?
+                Laborum illo architecto vel autem magnam explicabo sapiente quo, deserunt corporis eligendi, eos illum enim fuga expedita praesentium nesciunt nulla minima exercitationem repellendus molestiae ex recusandae impedit sit. Odio, recusandae!</p>
+            </div>
+
+            <button class="show-text" id="show-text">Mostrar mensagem</button>
         </section>
+
+        <div class="text-screen" id="text-screen">
+            <div class="screen-header">
+                <i class="fa-solid fa-chevron-down" id="closeTextBtn"></i>
+
+                <div class="screen-info">
+                    <h3>Until I Found You (Em Beihold Version)</h3>
+                    <p>Stephen Sanchez e Em Beihold</p>
+                </div>
+
+                <i class="fa-regular fa-flag"></i>
+            </div>
+            
+            <div class="screen-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed hic amet vero sunt dignissimos repudiandae corrupti mollitia consectetur? Suscipit soluta neque excepturi, impedit voluptatibus accusamus numquam eveniet labore a ipsa?
+                Laborum illo architecto vel autem magnam explicabo sapiente quo, deserunt corporis eligendi, eos illum enim fuga expedita praesentium nesciunt nulla minima exercitationem repellendus molestiae ex recusandae impedit sit. Odio, recusandae!</p>
+            </div>
+
+            <div class="screen-player">
+                <div class="progress-bar">
+                    <input type="range" name="" id="progress-mini" min="0" value="0">
+                    <div class="time">
+                        <time class="current-mini">0:00</time>
+                        <time class="total-mini">-3:21</time>
+                    </div>
+                </div>
+                
+                <div class="controls-mini">
+                    <button class="play-pause-mini" id="play-pause-mini">
+                        <i class="fa-solid fa-play"></i>
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
         <section class="wrapped-section">
 
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

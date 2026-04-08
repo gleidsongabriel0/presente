@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* J.H.S. */
+
 * {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -10,6 +12,7 @@
 body {
     display: flex;
     justify-content: center;
+    /* background-color: #121212; */
 }
 
 .app {
@@ -21,6 +24,8 @@ body {
     background-color: #121212;
     background-image: linear-gradient(#8a0f28 0%, #8a0f28 45%, #600a1d 65%, #121212 85%);
     background-repeat: no-repeat;
+
+    padding-bottom: 60px;
 }
 
 .header {
@@ -68,7 +73,7 @@ body {
     margin-right: 15px;
 }
 
-.music-info .title h1{
+.music-info .title h1 {
     font-size: 26px;
     font-weight: 700;
     white-space: nowrap;
@@ -76,8 +81,8 @@ body {
     margin-bottom: 5px;
 }
 
-.music-info .artist h2 {
-    font-size: 14px;
+.music-info .artist p {
+    font-size: 15px;
     font-weight: 450;
     color: rgba(255, 255, 255);
     margin-right: 5px;
@@ -116,7 +121,7 @@ body {
     appearance: none;
     width: 100%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(to right, #ffffff 0%, #ffffff var(--progress, 0%), rgba(255, 255, 255, 0.3) var(--progress, 0%), rgba(255, 255, 255, 0.3) 100%);
     border-radius: 2px;
     outline: none;
 }
@@ -128,6 +133,7 @@ body {
     height: 12px;
     background-color: #ffffff;
     border-radius: 50%;
+    outline: none;
     cursor: pointer;
 }
 
@@ -169,11 +175,204 @@ body {
 
 .play-pause i {
     font-size: 24px;
-    color:rgb(138, 15, 40);
+    color: rgb(138, 15, 40);
     opacity: 1;
 }
 
-.play-pause .fa-play {
+.play-pause .fa-pause {
+    display: none;
+}
+
+.counter-section {
+    background-color: #332f2f;
+    border-radius: 15px;
+    margin: 40px 20px 20px 20px;
+    overflow: hidden;
+}
+
+.counter-photo {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.counter-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.counter-photo h2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.counter {
+    padding: 16px;
+}
+
+.counter h2 {
+    font-size: 24px;
+}
+
+.counter p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.time-box {
+    background-color: #332f2f;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    padding: 15px 5px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-box .number {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.time-box .label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 5px;
+}
+
+.text-section {
+    background-color: #cf173c;
+    border-radius: 15px;
+    margin: 0 20px;
+    padding: 16px;
+}
+
+.text-section h2 {
+    font-size: 18px;
+    font-weight: 650;
+    margin-bottom: 16px;
+}
+
+.content {
+    position: relative;
+    max-height: 180px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Altura do esfumaçado */
+    
+    /* Cria um degradê que vai do transparente até a cor de fundo do card */
+    /* ATENÇÃO: Troque o #ba1235 aqui pela mesma cor de fundo que você usar no .message-section */
+    background: linear-gradient(to bottom, transparent, #cf173c); 
+}
+
+.show-text {
+    background-color: #ffffff;
+    color: #252525;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.text-screen {
+    position: fixed;
+    top: 0;
+    left: 50%;
+
+    width: 100%;
+    max-width: 450px;
+    height: 100vh;
+
+    background-color: #cf173c;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    transform: translateX(-50%) translateY(100%);
+    /* transition: transform 0.4s ease-in-out; */
+}
+
+.text-screen.active {
+    transform: translateX(-50%) translateY(0);
+}
+
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.screen-header i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.screen-info {
+    text-align: center;
+}
+
+.screen-player {
+    display: flex;
+    flex-direction: column; /* Coloca a barra em cima e o botão embaixo */
+    padding-top: 20px;
+    width: 100%; /* Garante que a barra estique de ponta a ponta */
+}
+
+.controls-mini {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; /* Dá um espaço legal entre a barra e o botão grande */
+}
+
+.play-pause-mini {
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Tamanho e cor do ícone dentro do botão branco */
+.play-pause-mini i {
+    font-size: 30px;
+    color: #cf173c; 
+}
+
+/* Esconde o pause por padrão, igual fizemos no player principal */
+.play-pause-mini .fa-pause {
     display: none;
 }
 
@@ -186,5 +385,3 @@ body {
     }
 }
 
-/* 73x73 butao do meio */
-/* color: rgb(138, 15, 40); */
