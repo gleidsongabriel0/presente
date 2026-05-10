@@ -304,20 +304,18 @@ body {
 .text-screen {
     position: fixed;
     top: 0;
-    bottom: 0;
     left: 50%;
 
     width: 100%;
     max-width: 450px;
-    /* height: 100vh;
-    height: 100dvh; */
+    height: 100%;
 
     background-color: #cf173c;
     z-index: 100;
     display: flex;
     flex-direction: column;
 
-    padding: 20px 20px 40px 20px;
+    padding: 20px 20px 0px 20px;
 
     transform: translateX(-50%) translateY(100%);
     /* transition: transform 0.4s ease-in-out; */
@@ -357,6 +355,8 @@ body {
     flex-direction: column; /* Coloca a barra em cima e o botão embaixo */
     padding-top: 20px;
     width: 100%; /* Garante que a barra estique de ponta a ponta */
+
+    padding-bottom: 40px;
 }
 
 .screen-body {
