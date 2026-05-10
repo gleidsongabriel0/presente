@@ -340,11 +340,41 @@ body {
     text-align: center;
 }
 
+.screen-info h3 {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.screen-info p {
+    font-size: 14px;
+}
+
 .screen-player {
     display: flex;
     flex-direction: column; /* Coloca a barra em cima e o botão embaixo */
     padding-top: 20px;
     width: 100%; /* Garante que a barra estique de ponta a ponta */
+}
+
+.screen-body {
+    flex: 1;
+    overflow-y: auto;
+
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.6;
+
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+
+    padding-bottom: 100px;
+
+    scrollbar-width: none; /* Esconde a barra no Firefox */
+    -ms-overflow-style: none; /* Esconde a barra no Edge/IE antigo */
+}
+
+.screen-body::-webkit-scrollbar {
+    display: none;
 }
 
 .controls-mini {
